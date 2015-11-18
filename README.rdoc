@@ -1,0 +1,1 @@
+users should be able to post a quote from the homepage and have it show up immediately in a list of recently added posts.

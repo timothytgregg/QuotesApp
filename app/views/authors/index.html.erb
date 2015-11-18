@@ -1,0 +1,16 @@
+<h1>author index</h1>
+
+<%= link_to 'Create New Author', new_author_path %>
+
+<% @authors.each do | author | %>
+
+  <div class="author">
+
+    <p>
+      <%= link_to author.name, author_path(author.id) %>
+    </p>
+
+
+  </div>
+
+<% end %>

@@ -1,0 +1,31 @@
+<br/>
+<%= link_to "Add New Author", new_author_path %>
+<%= link_to "Add New Quote", new_quote_path %>
+
+<div class="welcome-wrapper">
+  <div class="left">
+    <% @quotes.shuffle.each do | q | %>
+      <div class="quote">
+        <p>
+          '<%= link_to q.content, quote_path(q) %>'
+        </p>
+        <% if q.author %>
+          <p>
+            ---<%= link_to q.author.name, author_path(q.author) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="right">
+    <% @authors.each do | a | %>
+      <div class="author">
+        <p>
+          <%= link_to a.name, author_path(a) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+</div>

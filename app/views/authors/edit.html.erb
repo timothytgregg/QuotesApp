@@ -1,0 +1,18 @@
+<h1>edit author</h1>
+
+<%= form_for :author, url: author_path(@author), method: :patch do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', authors_path %>
+
+<%= link_to 'Delete!', author_path(@author), method: :delete, class: 'delete' %>
