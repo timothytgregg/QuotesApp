@@ -14,8 +14,13 @@ class FavoritesController < ApplicationController
 
   def create
     @quote=Quote.find(params[:quote_id])
-    @quote.favorites.create!(favorite_params)
-    redirect_to @quote
+    if @quote.favorites.create!(favorite_params)
+      redirect_to @quote
+      flash[:notice] = "Quote successfully added!"
+    else
+      render @quote
+      flash[:notice] = "try again!"
+    end
   end
 
   def edit

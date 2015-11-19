@@ -1,6 +1,6 @@
 <h2>all quotes</h2>
 
-<%= link_to "New Quote", new_quote_path %>
+<%= link_to "New Quote", new_quote_path %></br>
 
 <% @quotes.each do | q | %>
 
@@ -11,6 +11,11 @@
     <% if q.author %>
       <p>
         ---<%= link_to q.author.name, author_path(q.author) %>
+      </p>
+    <% end %>
+    <% if q.auteur%>
+      <p>
+        ---<%= q.auteur %>
       </p>
     <% end %>
   </div>
