@@ -1,0 +1,12 @@
+<h1>show</h1>
+
+<p>
+  <strong>Collection Title:</strong>
+  <%= @collection.title %>
+</p>
+
+<br>
+
+<%= link_to 'Quotes', collection_quotes_path(@collection) %>
+<%= link_to 'Back', collections_path %>
+<%= link_to 'Edit', edit_collection_path(@collection) %>

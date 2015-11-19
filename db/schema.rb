@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118014936) do
+ActiveRecord::Schema.define(version: 20151118134915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,18 @@ ActiveRecord::Schema.define(version: 20151118014936) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "collection_quotes", force: :cascade do |t|
+    t.integer "quote_id"
+    t.integer "collection_id"
+  end
+
+  add_index "collection_quotes", ["collection_id"], name: "index_collection_quotes_on_collection_id", using: :btree
+  add_index "collection_quotes", ["quote_id"], name: "index_collection_quotes_on_quote_id", using: :btree
+
   create_table "collections", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "title"
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -65,4 +74,6 @@ ActiveRecord::Schema.define(version: 20151118014936) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "collection_quotes", "collections"
+  add_foreign_key "collection_quotes", "quotes"
 end

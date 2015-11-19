@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :texts
 
   resources :collections do
-    resources :quotes
+    resources :quotes, shallow: true
   end
 
 end

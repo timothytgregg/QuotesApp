@@ -14,3 +14,7 @@ fn.quotes.create(content:"Those who were dancing were thought insane by those wh
 
 ac = Author.create(name:"Albert Camus", full_name:nil, birthyear:nil, deathyear:nil)
 ac.quotes.create(content:"Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible.")
+ac.quotes.create(content:"Life should be lived to the point of tears.")
+
+ase = Author.create(name:"Antoine de Saint-Éxupery", full_name:nil, birthyear:nil, deathyear:nil)
+ase.quotes.create(content:"Perfection is reached not when there is nothing more to add, but when there is nothing more to subtract.")

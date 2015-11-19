@@ -1,3 +1,4 @@
 class Collection < ActiveRecord::Base
-  has_many :quotes
+  has_many :collection_quotes
+  has_many :quotes, through: :collection_quotes
 end

@@ -1,0 +1,19 @@
+<h1>collections</h1>
+
+<% @collections.each do | c | %>
+  <div class="collection">
+    <strong>
+      <%= link_to c.title, collection_path(c) %>
+    </strong>
+    <% c.quotes.each do | q | %>
+      <p>
+        '<%= q.content %>'
+      </p>
+      <% if q.author %>
+        <p>
+          ---<%= q.author.name %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

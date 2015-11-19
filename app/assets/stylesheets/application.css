@@ -22,3 +22,8 @@ body{
   border: 1px solid black;
   margin: 2em
 }
+
+.collection{
+  display: inline-block;
+  border: 1px solid black
+}

@@ -4,6 +4,10 @@ class QuotesController < ApplicationController
     if params[:author_id]
       @author = Author.find(params[:author_id])
       @quotes = Quote.all.where(author_id:@author.id)
+    elsif params[:collection_id]
+      @collection = Collection.find(params[:collection_id])
+      @quotes = @collection.quotes
+      render 'collection_index'
     else
       @quotes = Quote.all
       render 'no_author_index'
@@ -73,7 +77,7 @@ class QuotesController < ApplicationController
 
   private
     def quote_params
-      params.require(:quote).permit(:content, :auteur, :source, :year)
+      params.require(:quote).permit(:content, :auteur, :source, :year, :author_id)
     end
 
 end
