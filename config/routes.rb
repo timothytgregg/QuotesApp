@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :quotes
+  resources :quotes do
+    resources :collection_quotes
+  end
 
   resources :authors do
     resources :quotes, shallow: true
@@ -15,9 +17,7 @@ Rails.application.routes.draw do
   resources :texts
 
   resources :collections do
-    resources :quotes, shallow: true
+    resources :quotes
   end
-
-  resources :collection_quotes
 
 end

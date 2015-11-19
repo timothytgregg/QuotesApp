@@ -23,11 +23,17 @@ class CollectionsController < ApplicationController
   end
 
   def edit
-    @collection = Collection.find(:id)
+    @collection = Collection.find(params[:id])
   end
 
   def update
-    @collection = Collection.find(:id)
+    @collection = Collection.find(params[:id])
+
+    if @collection.update(collection_params)
+      redirect_to @collection
+    else
+      render 'edit'
+    end
   end
 
   def destroy

@@ -7,5 +7,7 @@
 
 <br>
 
+<%= form_for [@quote, @collection_quote]
+
 <%= link_to 'Back', author_quotes_path(@quote.author) %>
 <%= link_to 'Edit', edit_quote_path(@quote) %>
