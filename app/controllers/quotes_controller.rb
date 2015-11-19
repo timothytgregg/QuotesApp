@@ -37,10 +37,18 @@ class QuotesController < ApplicationController
   end
 
   def create
-
+    binding.pry
     if params[:author_id]
       @author = Author.find(params[:author_id])
       @quote = @author.quotes.new(quote_params)
+    elsif params[:quote][:author_id]
+      if Author.find_by(name:params[:quote][:author_id])
+        @author=Author.find_by(name:params[:quote][:author_id])
+        @quote=@author.quotes.create(content:params[:quote][:content])
+      else
+        @author=Author.create(name:params[:quote][:author_id])
+        @quote = @author.quotes.new(content:params[:quote][:content])
+      end
     else
       @quote = Quote.new(quote_params)
     end

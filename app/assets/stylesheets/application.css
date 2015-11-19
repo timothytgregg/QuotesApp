@@ -16,6 +16,7 @@ body{
 
 .right{
   display: inline-block;
+  float: right;
   width: 50%;
 }
 
