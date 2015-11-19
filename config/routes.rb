@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :quotes do
-    resources :collection_quotes
+    resources :favorites
   end
 
   resources :authors do

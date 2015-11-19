@@ -1,7 +1,5 @@
 
-<%= link_to "New Quote", new_quote_path %>
-
-<h1>collection quotes</h1>
+<h1><%= @collection.title %> quotes</h1>
 
 <% @quotes.each do | q | %>
 

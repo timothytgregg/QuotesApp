@@ -7,7 +7,10 @@
 
 <br>
 
-<%= form_for [@quote, @collection_quote]
+<%= form_for [@quote, Favorite.new] do |f| %>
+  <%= collection_select(:favorite, :collection_id, Collection.all, :id, :title) %>
+  <%= f.submit 'create favorite'%>
+<% end %>
 
 <%= link_to 'Back', author_quotes_path(@quote.author) %>
 <%= link_to 'Edit', edit_quote_path(@quote) %>
