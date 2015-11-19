@@ -1,15 +1,18 @@
-<h1>show quote</h1>
-
 <p>
   <strong>Content:</strong>
   <%= @quote.content %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @quote.author.name %>
 </p>
 
 <br>
 
 <%= form_for [@quote, Favorite.new] do |f| %>
   <%= collection_select(:favorite, :collection_id, Collection.all, :id, :title) %>
-  <%= f.submit 'create favorite'%>
+  <%= f.submit 'add to collection! yay!!' %>
 <% end %>
 
 <%= link_to 'Back', author_quotes_path(@quote.author) %>

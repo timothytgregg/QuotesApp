@@ -1,6 +1,9 @@
 class FavoritesController < ApplicationController
 
   def index
+    @collection=Collection.find(params[:collection_id])
+    @favorites=@collection.favorites
+    @quotes=@collection.quotes
   end
 
   def new
@@ -22,10 +25,14 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @collection=Collection.find(params[:collection_id])
+    @favorite=Favorite.find(params[:id])
+    @favorite.destroy
+    redirect_to @collection
   end
 
   private
     def favorite_params
-      params.require(:favorite).permit(:collection_id)
+      params.require(:favorite).permit(:collection_id, :quote_id)
     end
 end

@@ -5,6 +5,8 @@ body{
 
 .quote {
   margin-bottom: 5px;
+  border: 1px dashed grey;
+  display: inline-block;
 }
 
 .left{

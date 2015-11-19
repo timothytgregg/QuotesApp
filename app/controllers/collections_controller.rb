@@ -10,6 +10,7 @@ class CollectionsController < ApplicationController
 
   def show
     @collection = Collection.find(params[:id])
+    @quotes = @collection.quotes
   end
 
   def create
@@ -24,6 +25,7 @@ class CollectionsController < ApplicationController
 
   def edit
     @collection = Collection.find(params[:id])
+    @quotes = @collection.quotes
   end
 
   def update

@@ -1,0 +1,16 @@
+<% @favorites.each do | f | %>
+
+  <div class="favorite">
+    <p>
+      <%= link_to f.quote.content, quote_path(f.quote) %>
+    </p>
+    <% if f.quote.author %>
+      <p>
+        ---<%= link_to f.quote.author.name, author_path(f.quote.author) %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to 'Delete!', collection_favorite_path(@collection.id, f.id), method: :delete, class: 'delete' %>
+
+<% end %>

@@ -13,6 +13,21 @@
 
 <% end %>
 
+<% @quotes.each do | q | %>
+
+  <div class="quote">
+    <p>
+      <%= link_to q.content, quote_path(q) %>
+    </p>
+    <% if q.author %>
+      <p>
+        ---<%= link_to q.author.name, author_path(q.author) %>
+      </p>
+    <% end %>
+  </div><br/>
+
+<% end %>
+
 <%= link_to 'Back', collection_path(@collection) %>
 
 <%= link_to 'Delete!', collection_path(@collection), method: :delete, class: 'delete' %>
