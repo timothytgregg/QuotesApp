@@ -14,6 +14,12 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
+
+    if @collection.save
+      redirect_to collection_path(@collection)
+    else
+      render 'new'
+    end
   end
 
   def edit

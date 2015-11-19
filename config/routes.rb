@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resources :quotes, shallow: true
   end
 
+  resources :collection_quotes
+
 end

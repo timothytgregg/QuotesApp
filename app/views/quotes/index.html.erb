@@ -1,13 +1,13 @@
 <h2>all quotes</h2>
 
+<%= link_to @author.name, author_path(@author) %><br/>
 <%= link_to "New Quote", new_author_quote_path %>
-<%= link_to @author.name, author_path(@author) %>
 
 <% @quotes.each do | q | %>
 
   <div class="quote">
     <p>
-      <%= link_to q.content, quote_path(q) %>
+      '<%= link_to q.content, quote_path(q) %>'
     </p>
   </div>
 

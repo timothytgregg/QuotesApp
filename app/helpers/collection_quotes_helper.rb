@@ -1,0 +1,2 @@
+module CollectionQuotesHelper
+end
