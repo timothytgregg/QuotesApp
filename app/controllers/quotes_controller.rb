@@ -50,7 +50,8 @@ class QuotesController < ApplicationController
     else
       render 'new'
     end
-
+#Like we talked about. I think you can do something where if you the author is
+#not found in the author table it is added would be super cool.
   end
 
   def update
