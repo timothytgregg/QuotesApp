@@ -1,0 +1,18 @@
+<h2>all quotes</h2>
+
+<%= link_to "New Quote", new_quote_path %>
+
+<% @quotes.each do | q | %>
+
+  <div class="quote">
+    <p>
+      <%= link_to q.content, quote_path(q) %>
+    </p>
+    <% if q.author %>
+      <p>
+        ---<%= link_to q.author.name, author_path(q.author) %>
+      </p>
+    <% end %>
+  </div>
+
+<% end %>
