@@ -1,1 +1,7 @@
-users should be able to post a quote from the homepage and have it show up immediately in a list of recently added posts.
+Hello! And Welcome to my Project 2 Repository.
+
+I decided to take the first suggestion of sharing pick-me-ups, and wark on making an app that shares quotes instead.
+
+I used Ruby on Rails, HTML and CSS, and plan on using jQuery to interact with the WikiQuote API in the near future to make this project even awesomer.
+
+Currently (11/20) the basic functionality of the site is, I think, pretty good, but in the future I'd like to add user authorization and the ability for users to share quotes or collections of quotes publicly and get upvoted etc. reddit style.
