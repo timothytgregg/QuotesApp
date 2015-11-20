@@ -26,7 +26,7 @@ q4=ac.quotes.create(content:"Life should be lived to the point of tears.")
 ase = Author.create(name:"Antoine de Saint-Éxupery", full_name:nil, birthyear:nil, deathyear:nil)
 q5=ase.quotes.create(content:"Perfection is reached not when there is nothing more to add, but when there is nothing more to subtract.")
 
-taytay = Author.create(name:"Taylor Abigail Swift", full_name:nil, birthyear:nil, deathyear:nil)
+taytay = Author.create(name:"Taylor Swift", full_name:nil, birthyear:nil, deathyear:nil)
 q6=taytay.quotes.create(content:"Romeo, Take Me Somewhere We Can Be Alone.")
 
 Favorite.create(quote_id:q1.id, collection_id:phil.id)
