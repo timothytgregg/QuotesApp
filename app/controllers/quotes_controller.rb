@@ -37,7 +37,17 @@ class QuotesController < ApplicationController
   end
 
   def create
-    binding.pry
+    
+    #the following block manages various user inputs
+    #from any new create action.
+    #if no author is given, create a new quote without author
+    #if request coming from nested page under author,
+    #create a quote for that author.
+    #if string entered through 'author_id' field,
+    #creates for that author if it already exists,
+    #or, makes new author if string doesnt match existing author,
+    #and creates under that new author.
+
     if params[:author_id]
       @author = Author.find(params[:author_id])
       @quote = @author.quotes.new(quote_params)

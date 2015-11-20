@@ -12,7 +12,7 @@
 
 <%= form_for [@quote, Favorite.new] do |f| %>
   <%= collection_select(:favorite, :collection_id, Collection.all, :id, :title) %>
-  <%= f.submit 'add to collection! yay!!' %>
+  <%= f.submit 'add to collection!' %>
 <% end %>
 
 <%= link_to 'Back', author_quotes_path(@quote.author) %>

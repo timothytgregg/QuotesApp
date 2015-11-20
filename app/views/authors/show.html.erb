@@ -5,7 +5,11 @@
   <%= @author.name %>
 </p>
 
-<br>
+<% if @author.name=="Albert Camus" %>
+  <div class="author_info">
+    <span>Albert Camus (7 November 1913 – 4 January 1960) was a French Nobel Prize–winning philosopher, author, and journalist. His views contributed to the rise of the philosophy known as absurdism. He wrote in his essay The Rebel that his whole life was devoted to opposing the philosophy of nihilism while still delving deeply into individual freedom.</span>
+  </div>
+<% end %>
 
 <%= link_to 'Quotes', author_quotes_path(@author) %>
 <%= link_to 'Back', authors_path %>

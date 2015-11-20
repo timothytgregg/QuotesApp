@@ -3,8 +3,13 @@ body{
   text-align: center;
 }
 
+.author_info{
+  text-align: center;
+  margin: 0 200px
+}
+
 .quote {
-  margin-bottom: 5px;
+  margin: 0 100px 5px 100px;
   border: 1px dashed grey;
   display: block;
 }
