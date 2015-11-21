@@ -2,6 +2,7 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.all
+    #some like @collections = Collection.current_user or something might create some privacy.
   end
 
   def new
@@ -15,7 +16,7 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
-
+#what are fail conditions for your checks.
     if @collection.save
       redirect_to collection_path(@collection)
     else
